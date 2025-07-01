@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Kelvian Yunianto - Profil</title>
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="https://placehold.co/32x32/3d4d5e/c9d1d9?text=AKY" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Default: Warna latar belakang hitam pekat */
+            color: #c9d1d9; /* Default: Warna teks terang, tetap terlihat pada hitam pepek */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk perubahan tema */
+        }
+
+        /* Gaya untuk mode terang */
+        body.light-theme {
+            background-color: #ffffff; /* Warna latar belakang terang */
+            color: #222222; /* Warna teks gelap */
+        }
+
+        /* Mengatur warna scrollbar untuk tampilan yang lebih baik pada tema gelap */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a; /* Track scrollbar lebih gelap */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333; /* Thumb scrollbar lebih gelap */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555555; /* Hover thumb scrollbar lebih gelap */
+        }
+
+        /* Gaya scrollbar untuk mode terang */
+        body.light-theme ::-webkit-scrollbar-track {
+            background: #e0e0e0; /* Track scrollbar terang sedikit lebih gelap */
+        }
+        body.light-theme ::-webkit-scrollbar-thumb {
+            background: #aaaaaa; /* Thumb scrollbar terang sedikit lebih gelap */
+        }
+        body.light-theme ::-webkit-scrollbar-thumb:hover {
+            background: #888888; /* Hover thumb scrollbar terang sedikit lebih gelap */
+        }
+
+        /* Menyesuaikan warna komponen pada mode gelap */
+        .bg-[#161b22] {
+            background-color: transparent; /* Latar belakang komponen menjadi transparan */
+        }
+        .bg-gray-700 { /* Untuk badge "Times Seen" di mode gelap */
+            background-color: #1a1a1a; /* Menjadi hitam sangat gelap */
+            color: #eeeeee; /* Teks tetap terang */
+        }
+
+        /* Menyesuaikan warna komponen pada mode terang */
+        body.light-theme .bg-[#161b22] {
+            background-color: transparent; /* Latar belakang komponen menjadi transparan */
+            box-shadow: none; /* Hapus bayangan */
+        }
+        body.light-theme .text-white {
+            color: #222222; /* Teks putih diubah menjadi gelap */
+        }
+        body.light-theme .text-gray-300 {
+            color: #444444; /* Abu-abu 300 diubah menjadi lebih gelap */
+        }
+        body.light-theme .text-gray-400 {
+            color: #666666; /* Abu-abu 400 diubah menjadi lebih gelap */
+        }
+        body.light-theme .text-gray-700 { /* Untuk badge "Times Seen" di mode terang */
+            background-color: #e0e0e0;
+            color: #444444;
+        }
+        body.light-theme .border-blue-500 {
+            border-color: #2563eb; /* Tetap biru atau disesuaikan */
+        }
+        body.light-theme .border-[#0d1117] {
+            border-color: #dddddd; /* Warna border diubah agar terlihat pada tema terang */
+        }
+        /* Gaya untuk menu seluler yang diciutkan/diperluas */
+        #main-nav {
+            display: none; /* Hidden by default on all screens */
+            flex-direction: column; /* Default to column for mobile when shown */
+            width: 100%;
+            background-color: #0a0a0a; /* Background for the expanded menu (dark theme) */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 1rem;
+            box-shadow: none;
+            border-radius: 0;
+            z-index: 100;
+        }
+
+        /* When the menu is open (via JS toggle) */
+        #main-nav.open {
+            display: flex; /* Make it visible */
+        }
+
+        /* Desktop styles for the navigation menu */
+        @media (min-width: 768px) { /* md breakpoint */
+            #main-nav {
+                display: flex; /* Always visible and flex on desktop */
+                position: static; /* Back to normal flow */
+                background-color: transparent; /* No background on desktop */
+                flex-direction: row; /* Horizontal layout on desktop */
+                padding: 0; /* No padding on desktop */
+                margin-left: auto; /* Push to the right on desktop */
+                width: auto; /* Take natural width */
+            }
+            /* Ensure links inside also behave correctly on desktop */
+            #main-nav a {
+                margin-bottom: 0; /* Remove bottom margin for horizontal links */
+            }
+        }
+        /* New style for mobile nav menu in light theme */
+        body.light-theme #main-nav {
+            background-color: #f0f0f0; /* Light background for mobile menu in light theme */
+        }
+        body.light-theme .nav-link-item {
+            color: #222222; /* Dark color for nav links in light theme */
+        }
+
+
+        .description-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .description-content.open {
+            max-height: 200px; /* Sesuaikan sesuai tinggi konten */
+            transition: max-height 0.3s ease-in;
+        }
+        
+        /* Penyesuaian kerenggangan baris */
+        .text-tight-leading {
+            line-height: 1.4; /* Mengurangi kerenggangan baris untuk teks paragraf utama */
+        }
+        .description-content ul li {
+            line-height: 1.4; /* Mengurangi kerenggangan baris untuk item daftar */
+        }
+
+        /* Gaya untuk tab skill dan portofolio */
+        .tab-button {
+            padding: 0.5rem 1rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap; /* Mencegah teks tab melipat */
+        }
+        .tab-button.active {
+            border-color: #2563eb; /* Warna biru aktif */
+            color: #2563eb;
+        }
+        .tab-button:hover {
+            color: #2563eb;
+        }
+        body.light-theme .tab-button.active {
+            color: #2563eb;
+        }
+        body.light-theme .tab-button:hover {
+            color: #2563eb;
+        }
+
+        /* Gaya untuk ikon skill */
+        .skill-icon-card {
+            width: 120px; /* Ukuran tetap untuk ikon */
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem; /* rounded-xl */
+            background-color: #1a1a1a; /* Latar belakang ikon */
+            transition: transform 0.2s ease;
+        }
+        .skill-icon-card:hover {
+            transform: translateY(-5px);
+        }
+        body.light-theme .skill-icon-card {
+            background-color: #e0e0e0;
+        }
+
+        /* Gaya untuk kartu portofolio */
+        .portfolio-card {
+            background-color: #1a1a1a; /* Latar belakang kartu */
+            border-radius: 0.75rem; /* rounded-xl */
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+        body.light-theme .portfolio-card {
+            background-color: #f0f0f0;
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: 200px; /* Tinggi gambar tetap */
+            object-fit: cover;
+        }
+        .portfolio-card .tech-icons img {
+            width: 24px; /* Ukuran ikon teknologi */
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        /* Gaya untuk item galeri/sertifikasi */
+        .media-card {
+            position: relative;
+            background-color: #1a1a1a;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; /* Stack image/video and title */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            min-width: 250px; /* Set minimum width for horizontal scrolling */
+            flex-shrink: 0; /* Prevent items from shrinking */
+        }
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+        body.light-theme .media-card {
+            background-color: #e0e0e0;
+        }
+
+        .media-content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px; /* Fixed height for media content */
+            flex-shrink: 0;
+        }
+        .media-content-wrapper img,
+        .media-content-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 28px;
+            color: white;
+            z-index: 5;
+            transition: background-color 0.2s ease;
+        }
+        .play-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .media-card-title-box {
+            background-color: #1a1a1a; /* Dark theme */
+            color: #c9d1d9;
+            padding: 0.75rem; /* p-3 */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            text-align: center;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+            flex-grow: 1; /* Allow it to grow if content is larger */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.3; /* Adjust line height for better appearance */
+        }
+        body.light-theme .media-card-title-box {
+            background-color: #e0e0e0; /* Light theme */
+            color: #222222;
+        }
+
+        /* Gaya untuk modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            color: #c9d1d9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal-overlay.open .modal-content {
+            transform: translateY(0);
+        }
+        body.light-theme .modal-content {
+            background-color: #f0f0f0;
+            color: #222222;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #c9d1d9;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        body.light-theme .modal-close-btn {
+            color: #222222;
+        }
+        body.light-theme .modal-close-btn:hover {
+            color: #2563eb;
+        }
+        .modal-title {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        /* Gaya untuk link navigasi */
+        .nav-link-item {
+            color: #c9d1d9; /* Default dark theme color */
+        }
+        body.light-theme .nav-link-item {
+            color: #222222; /* Dark color for nav links in light theme */
+        }
+        /* Gaya untuk tombol kontak di mode terang */
+        .contact-button {
+            color: white; /* Default text color for dark mode */
+        }
+        body.light-theme .contact-button {
+            background-color: #e0e0e0; /* Light gray background */
+            color: #222222; /* Dark text for contrast */
+        }
+        body.light-theme .contact-button:hover {
+            background-color: #cccccc; /* Slightly darker gray on hover */
+        }
+
+        /* Menyesuaikan warna latar belakang header di mode terang */
+        header {
+            background-color: #000000; /* Default dark theme for header */
+            transition: background-color 0.3s ease;
+        }
+        body.light-theme header {
+            background-color: #ffffff; /* Light theme for header */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigasi Bar -->
+    <header class="py-4 px-6 md:px-12 flex justify-between items-center relative border-b-2 border-blue-500">
+        <!-- Tombol menu hamburger (hanya terlihat di bawah md breakpoint) -->
+        <div class="flex items-center md:hidden">
+            <button id="menu-toggle" class="text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Navigasi Utama -->
+        <nav id="main-nav">
+            <a href="#about-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">About</a>
+            <a href="#skills-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">Skill</a>
+            <a href="#portfolio-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">Portofolio</a>
+            <a href="#certification-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">Certification</a>
+            <a href="#gallery-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">Gallery</a>
+            <a href="#contact-section" class="nav-link-item font-medium rounded-lg px-3 py-2 transition duration-300">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-6 ml-auto"> <!-- Pindahkan ke kanan pada mobile -->
+            <!-- Tombol Pengubah Tema -->
+            <button id="theme-toggle" class="text-white hover:text-blue-400 transition duration-300 focus:outline-none">
+                <i class="fas fa-sun text-xl"></i> <!-- Ikon awal: matahari (mode terang) -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Konten Utama (akan diisi oleh JavaScript) -->
+    <main id="main-content" class="flex-grow container mx-auto px-4 md:px-8 py-12"></main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 px-4 mt-12 border-t-2 border-blue-500 text-gray-400 text-sm">
+        <p class="flex items-center justify-center">
+            Build &lt;/&gt; with <span class="text-red-500 mx-2 text-xl">&hearts;</span> by Aditya Kelvian Yunianto. &copy;2025
+        </p>
+    </footer>
+
+    <!-- Tombol Scroll ke Atas -->
+    <button id="scroll-to-top-btn" title="Gulir ke Atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal untuk Sertifikasi -->
+    <div id="certification-modal" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <h3 id="modal-title" class="modal-title"></h3>
+            <img id="modal-image" src="" alt="Sertifikat" class="w-full h-auto rounded-lg">
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk membuat elemen dengan kelas dan konten
+        const createElement = (tag, classes = [], content = '') => {
+            const element = document.createElement(tag);
+            if (classes.length > 0) {
+                element.className = classes.join(' ');
+            }
+            if (content) {
+                element.innerHTML = content;
+            }
+            return element;
+        };
+
+        // Data untuk bagian Skills
+        const skillsData = {
+            'Language': [
+                { name: 'HTML', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+                { name: 'CSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+                { name: 'Javascript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+                { name: 'Typescript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+                { name: 'PHP', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+                { name: 'Node.JS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+                { name: 'Golang', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' },
+                { name: 'Java', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+                { name: 'Python', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' }
+            ],
+            'Framework & Library': [
+                { name: 'React', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+                { name: 'Vue.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+                { name: 'Angular', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+                { name: 'Next.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+                { name: 'Laravel', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+                { name: 'Spring', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+                { name: 'Gin', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' }, // No Gin icon, using Go
+                { name: 'Django', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg' },
+                { name: 'TailwindCSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' }
+            ],
+            'Tools': [
+                { name: 'Git', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+                { name: 'Docker', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+                { name: 'Kubernetes', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+                { name: 'Jira', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg' },
+                { name: 'Postman', img: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' }
+            ],
+            'DBMS, ORM & COM': [
+                { name: 'MySQL', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+                { name: 'PostgreSQL', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+                { name: 'MongoDB', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+                { name: 'Hibernate', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg' },
+                { name: 'GORM', img: 'https://raw.githubusercontent.com/go-gorm/gorm.io/master/logo.png' }
+            ],
+            'Desain Grafis': [
+                { name: 'Adobe Photoshop', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg' },
+                { name: 'Adobe Illustrator', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg' },
+                { name: 'CorelDRAW', img: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/CorelDraw_icon.svg' },
+                { name: 'Canva', img: 'https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/canva.net/canva.svg' },
+                { name: 'Figma', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' }
+            ]
+        };
+
+        // Fungsi untuk merender skill untuk kategori tertentu (dipindahkan ke global scope)
+        const displaySkills = (category) => {
+            const contentContainer = document.querySelector('#skills-section .grid'); // Get the container
+            if (!contentContainer) return; // Exit if container not found
+
+            contentContainer.innerHTML = ''; // Hapus skill sebelumnya
+            const skills = skillsData[category];
+            skills.forEach(skill => {
+                const skillCard = createElement('div', ['skill-icon-card']);
+                const img = createElement('img', ['w-16', 'h-16', 'mb-2'], '');
+                img.src = skill.img;
+                img.alt = skill.name + ' icon';
+                // Tambahkan penanganan error untuk gambar
+                img.onerror = function() {
+                    this.src = 'https://placehold.co/64x64/3d4d5e/c9d1d9?text=' + skill.name.charAt(0); // Placeholder jika error
+                    this.alt = skill.name + ' icon (fallback)';
+                };
+
+                const name = createElement('span', ['text-sm', 'text-white', 'text-center'], skill.name);
+                
+                skillCard.appendChild(img);
+                skillCard.appendChild(name);
+                contentContainer.appendChild(skillCard);
+            });
+        };
+
+        // Data untuk bagian Portofolio
+        const portfolioData = {
+            'Web': [
+                {
+                    title: 'Web Portofolio v2',
+                    description: 'Aplikasi portofolio pribadi yang memuat informasi tentang diri, pengalaman, kemampuan atau keterampilan, project yang telah dikerjakan dan sertifikasi',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Web+Portofolio+v2', // Placeholder for the image
+                    technologies: [
+                        { name: 'HTML', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+                        { name: 'CSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+                        { name: 'Javascript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+                        { name: 'PHP', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+                        { name: 'Laravel', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' }, // Link to code
+                        { icon: 'fas fa-link', url: '#' } // Link to live site
+                    ]
+                },
+                {
+                    title: 'SiTukang - Sistem Penyedia Portofolio Tukang Bangunan',
+                    description: 'Aplikasi untuk mendapatkan informasi terkait keahlian, pengalaman, serta rentang harga dari tukang bangunan, baik secara individu maupun kelompok.',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=SiTukang', // Placeholder for the image
+                    technologies: [
+                        { name: 'Javascript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+                        { name: 'Vue.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+                        { name: 'TailwindCSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+                        { name: 'PHP', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+                        { name: 'Laravel', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' },
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                }
+            ],
+            'API': [
+                {
+                    title: 'Microservice App - Common Package',
+                    description: 'Backend Service untuk memberikan sebuah layanan API berupa Restfull API atau gRPC pada service sistem pengelolaan user account seperti autentikasi dan manajemen data',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Common+Package',
+                    technologies: [
+                        { name: 'Golang', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' },
+                        { name: 'Gin', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' }, // Using Go icon for Gin
+                        { name: 'PostgreSQL', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+                        { name: 'Docker', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+                        { name: 'Kubernetes', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' },
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                },
+                {
+                    title: 'Microservice App - User Account',
+                    description: 'Backend Service untuk memberikan sebuah layanan API berupa Restfull API atau gRPC pada service sistem pengelolaan user account seperti autentikasi dan manajemen data',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=User+Account',
+                    technologies: [
+                        { name: 'Golang', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' },
+                        { name: 'Gin', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' },
+                        { name: 'PostgreSQL', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+                        { name: 'Docker', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg' },
+                        { name: 'Kubernetes', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' },
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                },
+                {
+                    title: 'Air Pollution Integration API',
+                    description: 'Backend Service untuk memberikan sebuah layanan API pada sistem informasi kualitas udara berdasarkan daerah',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Air+Pollution',
+                    technologies: [
+                        { name: 'Express', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+                        { name: 'Typescript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+                        { name: 'MongoDB', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' },
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                },
+                {
+                    title: 'REST API Booking book',
+                    description: 'Backend Service untuk memberikan sebuah layanan API pada sistem peminjaman buku oleh peminjam kepada admin perpustakaan',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Booking+Book',
+                    technologies: [
+                        { name: 'Express', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+                        { name: 'Typescript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+                        { name: 'MongoDB', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-code', url: '#' },
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                }
+            ],
+            'Desain Grafis': [ // New category for Portfolio
+                {
+                    title: 'Desain Logo Perusahaan X',
+                    description: 'Desain logo modern dan minimalis untuk startup teknologi.',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Logo+Perusahaan+X',
+                    technologies: [
+                        { name: 'Adobe Illustrator', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg' },
+                        { name: 'Figma', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                },
+                {
+                    title: 'Desain UI/UX Aplikasi Mobile',
+                    description: 'Perancangan antarmuka pengguna dan pengalaman pengguna untuk aplikasi e-commerce mobile.',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=UI/UX+App',
+                    technologies: [
+                        { name: 'Figma', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+                        { name: 'Adobe XD', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                },
+                {
+                    title: 'Ilustrasi Digital untuk Buku Anak',
+                    description: 'Serangkaian ilustrasi berwarna cerah untuk buku cerita anak-anak.',
+                    image: 'https://placehold.co/400x200/2a3d4f/c9d1d9?text=Ilustrasi+Buku',
+                    technologies: [
+                        { name: 'Adobe Photoshop', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg' },
+                        { name: 'CorelDRAW', img: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/CorelDraw_icon.svg' }
+                    ],
+                    links: [
+                        { icon: 'fas fa-link', url: '#' }
+                    ]
+                }
+            ]
+        };
+
+        // Fungsi untuk merender proyek portofolio untuk kategori tertentu (dipindahkan ke global scope)
+        const displayPortfolio = (category) => {
+            const contentContainer = document.querySelector('#portfolio-section .grid'); // Get the container
+            if (!contentContainer) return; // Exit if container not found
+
+            contentContainer.innerHTML = ''; // Hapus proyek sebelumnya
+            const projects = portfolioData[category];
+            projects.forEach(project => {
+                const card = createElement('div', ['portfolio-card']);
+
+                const img = createElement('img', [], '');
+                img.src = project.image;
+                img.alt = project.title;
+                img.onerror = function() {
+                    this.src = 'https://placehold.co/400x200/3d4d5e/c9d1d9?text=Gambar+Tidak+Tersedia'; // Fallback image
+                    this.alt = 'Gambar tidak tersedia';
+                };
+                card.appendChild(img);
+
+                const textContent = createElement('div', ['p-4', 'flex-grow']);
+                const title = createElement('h3', ['text-xl', 'font-semibold', 'text-white', 'mb-2'], project.title);
+                const description = createElement('p', ['text-gray-300', 'text-sm', 'text-tight-leading', 'mb-4'], project.description);
+                
+                textContent.appendChild(title);
+                textContent.appendChild(description);
+
+                const techIconsDiv = createElement('div', ['flex', 'items-center', 'mb-4', 'tech-icons']);
+                project.technologies.forEach(tech => {
+                    const techImg = createElement('img', ['w-6', 'h-6', 'mr-2'], '');
+                    techImg.src = tech.img;
+                    techImg.alt = tech.name;
+                    techImg.onerror = function() {
+                        this.src = 'https://placehold.co/24x24/3d4d5e/c9d1d9?text=T'; // Fallback for tech icon
+                        this.alt = 'Tech icon (fallback)';
+                    };
+                    techIconsDiv.appendChild(techImg);
+                });
+                textContent.appendChild(techIconsDiv);
+
+                const linksDiv = createElement('div', ['flex', 'space-x-4', 'mt-auto']); // mt-auto to push links to bottom
+                project.links.forEach(link => {
+                    const linkAnchor = createElement('a', ['text-blue-400', 'hover:text-blue-300', 'text-lg'], `<i class="${link.icon}"></i>`);
+                    linkAnchor.href = link.url;
+                    linkAnchor.target = '_blank'; // Open in new tab
+                    linksDiv.appendChild(linkAnchor);
+                });
+                textContent.appendChild(linksDiv);
+
+                card.appendChild(textContent);
+                contentContainer.appendChild(card);
+            });
+        };
+
+        // Fungsi untuk merender bagian Hero
+        const renderHeroSection = () => {
+            const section = createElement('section', ['text-center', 'mb-16']);
+
+            // Untuk mengubah gambar profil, ganti URL di bawah ini dengan URL gambar Anda
+            const profileDiv = createElement('div', ['relative', 'w-32', 'h-32', 'mx-auto', 'mb-6']);
+            const profileImg = createElement('img', ['w-full', 'h-full', 'rounded-full', 'object-cover', 'border-4', 'border-blue-500', 'shadow-lg']);
+            profileImg.src = 'https://placehold.co/128x128/3d4d5e/c9d1d9?text=Profil'; // Ganti URL ini dengan gambar profil Anda
+            profileImg.alt = 'Gambar Profil Aditya Kelvian Yunianto';
+            profileDiv.appendChild(profileImg);
+
+            const nameHeading = createElement('h1', ['text-4xl', 'md:text-5xl', 'font-bold', 'text-white', 'mb-2'], 'Aditya Kelvian Yunianto');
+            const titleParagraph = createElement('p', ['text-blue-400', 'text-lg', 'md:text-xl', 'font-medium'], 'Frontend Engineer | Backend Engineer | Designer Grafis');
+
+            section.appendChild(profileDiv);
+            section.appendChild(nameHeading);
+            section.appendChild(titleParagraph);
+
+            return section;
+        };
+
+        // Fungsi untuk merender bagian About
+        const renderAboutSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'about-section';
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'About');
+            
+            const aboutText = `Lulusan S1 dari Universitas Semarang. Berpengalaman dalam bidang front-end web developer seperti menggunakan React.js, Next.js, TailwindCSS, PHP, dan Laravel dan desain grafis seperti Adobe photoshop, Corel draw, serta paham sedikit tentang Adobe illustrator, didukung oleh keahlian operasional saat bekerja menjadi pramusaji dan staf gudang. Pengalaman magang di kantor kecamatan juga membekali saya untuk dapat berinteraksi dengan masyarakat, dan memastikan informasi tersampaikan dengan jelas serta mudah dipahami.`;
+            const paragraph = createElement('p', ['text-gray-300', 'text-tight-leading', 'text-lg'], aboutText);
+            
+            section.appendChild(heading);
+            section.appendChild(paragraph);
+            return section;
+        };
+
+        // Fungsi untuk merender entri Pengalaman Kerja
+        const renderWorkExperienceSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'work-experience-section';
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Work Experience');
+            section.appendChild(heading);
+
+            const workExperiences = [
+                {
+                    company: 'Nexmedis',
+                    role: 'Backend Engineer',
+                    period: 'April 2025 - Now',
+                    icon: 'fas fa-briefcase',
+                    description: `
+                        <li>Bertanggung jawab untuk merancang dan mengembangkan API backend.</li>
+                        <li>Melakukan integrasi dengan database dan layanan eksternal.</li>
+                        <li>Berkolaborasi dengan tim frontend untuk memastikan alur kerja data yang mulus.</li>
+                    `
+                },
+                {
+                    company: 'VocaGame',
+                    role: 'Backend Engineer',
+                    period: 'March 2024 - March 2025',
+                    icon: 'fas fa-briefcase',
+                    description: `
+                        <li>Bertanggung jawab untuk merancang dan mengembangkan API backend.</li>
+                        <li>Melakukan integrasi dengan database dan layanan eksternal.</li>
+                        <li>Berkolaborasi dengan tim frontend untuk memastikan alur kerja data yang mulus.</li>
+                    `
+                },
+                {
+                    company: 'Eventhings',
+                    role: 'Backend Engineer',
+                    period: 'March 2024 - March 2025',
+                    icon: 'fas fa-briefcase',
+                    description: `
+                        <li>Membangun dan memelihara arsitektur server-side.</li>
+                        <li>Mengembangkan dan mengelola database.</li>
+                        <li>Menerapkan fitur baru dan mengoptimalkan kinerja aplikasi.</li>
+                    `
+                },
+                {
+                    company: 'PT Talenta Sinergi Group',
+                    role: 'Frontend Developer',
+                    period: 'December 2023 - February 2024',
+                    icon: 'fas fa-briefcase',
+                    description: `
+                        <li>Mengubah desain UI/UX menjadi kode frontend yang fungsional.</li>
+                        <li>Memastikan kompatibilitas lintas-browser dan responsivitas.</li>
+                        <li>Mengimplementasikan fitur interaktif menggunakan JavaScript.</li>
+                    `
+                },
+                {
+                    company: 'Institut Teknologi Telkom Purwokerto',
+                    role: 'Database Class Lecturer',
+                    period: 'October 2022 - January 2023',
+                    icon: 'fas fa-chalkboard-teacher',
+                    description: null
+                }
+            ];
+
+            const spaceYDiv = createElement('div', ['space-y-6']);
+
+            workExperiences.forEach(exp => {
+                const div = createElement('div', ['flex', 'items-start']);
+                const icon = createElement('i', [exp.icon, 'text-blue-400', 'text-xl', 'mr-4', 'mt-1']);
+                div.appendChild(icon);
+
+                const contentDiv = createElement('div');
+                const titleH3 = createElement('h3', ['text-2xl', 'font-semibold', 'text-white'], `${exp.company} <a href="#" class="text-blue-400 hover:text-blue-300 ml-2"><i class="fas fa-external-link-alt text-lg"></i></a>`);
+                const roleP = createElement('p', ['text-gray-400', 'text-lg'], exp.role);
+                const periodP = createElement('p', ['text-gray-400', 'text-base'], exp.period);
+                
+                contentDiv.appendChild(titleH3);
+                contentDiv.appendChild(roleP);
+                contentDiv.appendChild(periodP);
+
+                if (exp.description) {
+                    const toggleButton = createElement('button', ['text-blue-400', 'hover:text-blue-300', 'font-medium', 'mt-2', 'focus:outline-none', 'toggle-description', 'flex', 'items-center'], 'Show Description <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>');
+                    const descriptionContent = createElement('div', ['description-content', 'mt-2', 'text-gray-300', 'leading-relaxed', 'text-base'], `<ul class="list-disc list-inside space-y-1">${exp.description}</ul>`);
+                    
+                    contentDiv.appendChild(toggleButton);
+                    contentDiv.appendChild(descriptionContent);
+                }
+
+                div.appendChild(contentDiv);
+                spaceYDiv.appendChild(div);
+            });
+
+            section.appendChild(spaceYDiv);
+            return section;
+        };
+
+        // Fungsi untuk merender bagian Training & Organization
+        const renderTrainingOrganizationSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'training-organization-section';
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Training & Organization');
+            section.appendChild(heading);
+
+            const entries = [
+                {
+                    name: 'Bangkit Academy By Google, Go To & Traveloka',
+                    detail: 'Cloud Computing Cohort',
+                    period: 'February - August 2023',
+                    icon: 'fas fa-graduation-cap'
+                },
+                {
+                    name: 'Himpunan Mahasiswa Software Engineering',
+                    detail: 'Head of Media and Information Division',
+                    period: 'March 2022 - July 2023',
+                    icon: 'fas fa-users'
+                }
+            ];
+
+            const spaceYDiv = createElement('div', ['space-y-6']);
+            entries.forEach(entry => {
+                const div = createElement('div');
+                const h3 = createElement('h3', ['text-2xl', 'font-semibold', 'text-white', 'flex', 'items-center'], `<i class="${entry.icon} text-blue-400 mr-3"></i> ${entry.name}`);
+                const pDetail = createElement('p', ['text-gray-400', 'text-lg'], entry.detail);
+                const pPeriod = createElement('p', ['text-gray-400', 'text-base'], entry.period);
+                
+                div.appendChild(h3);
+                div.appendChild(pDetail);
+                div.appendChild(pPeriod);
+                spaceYDiv.appendChild(div);
+            });
+
+            section.appendChild(spaceYDiv);
+            return section;
+        };
+
+        // Fungsi untuk merender bagian Education
+        const renderEducationSection = () => {
+            // Added mb-16 class to create space below this section
+            const section = createElement('section', ['mb-16']);
+            section.id = 'education-section';
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Education');
+            section.appendChild(heading);
+
+            const entries = [
+                {
+                    name: 'Universitas Semarang',
+                    major: 'Sistem Informasi',
+                    period: 'Maret 2020 - Agustus 2024',
+                    icon: 'fas fa-university'
+                }
+            ];
+
+            const spaceYDiv = createElement('div', ['space-y-6']);
+            entries.forEach(entry => {
+                const div = createElement('div');
+                const h3 = createElement('h3', ['text-2xl', 'font-semibold', 'text-white', 'flex', 'items-center'], `<i class="${entry.icon} text-blue-400 mr-3"></i> ${entry.name}`);
+                const pMajor = createElement('p', ['text-gray-400', 'text-lg'], entry.major);
+                const pPeriod = createElement('p', ['text-gray-400', 'text-base'], entry.period);
+                
+                div.appendChild(h3);
+                div.appendChild(pMajor);
+                div.appendChild(pPeriod);
+                spaceYDiv.appendChild(div);
+            });
+
+            section.appendChild(spaceYDiv);
+            return section;
+        };
+
+        // Fungsi untuk merender bagian Skills
+        const renderSkillsSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'skills-section'; // Add ID for navigation
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Skills');
+            section.appendChild(heading);
+
+            const tabsContainer = createElement('div', ['flex', 'space-x-4', 'mb-8', 'overflow-x-auto', 'pb-2']);
+            const contentContainer = document.createElement('div'); // Define contentContainer here
+            contentContainer.className = 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center';
+            
+            let activeTab = 'Language'; // Default active tab
+
+            // Buat tombol tab
+            Object.keys(skillsData).forEach(category => {
+                const button = createElement('button', ['tab-button', 'text-white', 'font-medium', 'focus:outline-none'], category);
+                if (category === activeTab) {
+                    button.classList.add('active');
+                }
+                button.dataset.category = category; // Set data-category attribute
+                button.addEventListener('click', () => {
+                    // Hapus kelas aktif dari semua tombol
+                    document.querySelectorAll('#skills-section .tab-button').forEach(btn => btn.classList.remove('active'));
+                    // Tambahkan kelas aktif ke tombol yang diklik
+                    button.classList.add('active');
+                    activeTab = category;
+                    displaySkills(activeTab);
+                });
+                tabsContainer.appendChild(button);
+            });
+
+            section.appendChild(tabsContainer);
+            section.appendChild(contentContainer);
+
+            return section;
+        };
+
+        // Fungsi untuk merender bagian Portofolio
+        const renderPortfolioSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'portfolio-section'; // Add ID for navigation
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Portofolio');
+            section.appendChild(heading);
+
+            const tabsContainer = createElement('div', ['flex', 'space-x-4', 'mb-8', 'overflow-x-auto', 'pb-2']);
+            const contentContainer = document.createElement('div'); // Define contentContainer here
+            contentContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-8';
+            
+            let activeTab = 'Web'; // Default active tab for portfolio
+
+            // Buat tombol tab
+            Object.keys(portfolioData).forEach(category => {
+                const button = createElement('button', ['tab-button', 'text-white', 'font-medium', 'focus:outline-none'], category);
+                if (category === activeTab) {
+                    button.classList.add('active');
+                }
+                button.dataset.category = category; // Set data-category attribute
+                button.addEventListener('click', () => {
+                    // Hapus kelas aktif dari semua tombol
+                    document.querySelectorAll('#portfolio-section .tab-button').forEach(btn => btn.classList.remove('active'));
+                    // Tambahkan kelas aktif ke tombol yang diklik
+                    button.classList.add('active');
+                    activeTab = category;
+                    displayPortfolio(activeTab);
+                });
+                tabsContainer.appendChild(button);
+            });
+
+            section.appendChild(tabsContainer);
+            section.appendChild(contentContainer);
+
+            return section;
+        };
+
+        // Data untuk bagian Gallery
+        const galleryData = [
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Gambar+1', title: 'Iklan Rekrutmen Modern Hitam' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Gambar+2', title: 'Acara Band Playful Pelangi' },
+            { type: 'video', src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Video+Thumbnail', title: 'Video Demo Produk' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Gambar+3', title: 'Template Pemasaran Menyenangkan' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Gambar+4', title: 'Korsel Instagram Briefing Evaluasi' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Gambar+5', title: 'Merayakan ulang tahun perusahaan' }
+        ];
+
+        // Fungsi untuk merender sebuah kartu media (untuk Gallery dan Certification)
+        const renderMediaCard = (item) => {
+            const card = createElement('div', ['media-card']);
+
+            const mediaContentWrapper = createElement('div', ['media-content-wrapper']);
+
+            // Image/Video element
+            if (item.type === 'image') {
+                const img = createElement('img', [], '');
+                img.src = item.src;
+                img.alt = item.title;
+                img.onerror = function() {
+                    this.src = 'https://placehold.co/400x300/3d4d5e/c9d1d9?text=Gambar+Tidak+Tersedia';
+                    this.alt = 'Gambar tidak tersedia';
+                };
+                mediaContentWrapper.appendChild(img);
+            } else if (item.type === 'video') {
+                const video = createElement('video', [], '');
+                video.src = item.src;
+                if (item.poster) {
+                    video.poster = item.poster;
+                }
+                video.controls = false;
+                mediaContentWrapper.appendChild(video);
+
+                const playButton = createElement('div', ['play-button'], '<i class="fas fa-play"></i>');
+                playButton.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playButton.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        video.pause();
+                        playButton.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+                video.addEventListener('ended', () => {
+                    playButton.innerHTML = '<i class="fas fa-play"></i>';
+                });
+                mediaContentWrapper.appendChild(playButton);
+            }
+
+            card.appendChild(mediaContentWrapper);
+
+            // Title box below the media
+            const titleBox = createElement('div', ['media-card-title-box'], item.title);
+            card.appendChild(titleBox);
+
+            return card;
+        };
+
+        // Fungsi untuk merender bagian Gallery
+        const renderGallerySection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'gallery-section';
+            const headerContainer = createElement('div', ['flex', 'justify-between', 'items-center', 'mb-6']);
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Gallery');
+            headerContainer.appendChild(heading);
+            section.appendChild(headerContainer);
+
+            // Mengubah grid menjadi flexbox untuk scroll horizontal
+            const galleryGrid = createElement('div', ['flex', 'overflow-x-auto', 'space-x-4', 'pb-4']);
+            
+            galleryData.forEach(item => {
+                const galleryCard = renderMediaCard(item);
+                galleryGrid.appendChild(galleryCard);
+            });
+            section.appendChild(galleryGrid);
+
+            return section;
+        };
+
+        // Data untuk bagian Certification
+        const certificationData = [
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Sertifikasi+1', title: 'Sertifikasi Google Cloud' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Sertifikasi+2', title: 'Sertifikasi AWS Developer' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Sertifikasi+3', title: 'Sertifikasi Frontend Master' },
+            { type: 'image', src: 'https://placehold.co/400x300/2a3d4f/c9d1d9?text=Sertifikasi+4', title: 'Sertifikasi Desain UI/UX' }
+        ];
+
+        // Fungsi untuk merender bagian Certification
+        const renderCertificationSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'certification-section';
+            const headerContainer = createElement('div', ['flex', 'justify-between', 'items-center', 'mb-6']);
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Certification');
+            headerContainer.appendChild(heading);
+            section.appendChild(headerContainer);
+
+            // Mengubah grid menjadi flexbox untuk scroll horizontal
+            const certificationGrid = createElement('div', ['flex', 'overflow-x-auto', 'space-x-4', 'pb-4']);
+            
+            certificationData.forEach(item => {
+                const certItem = renderMediaCard(item); // Use the new renderMediaCard function
+                certItem.addEventListener('click', () => {
+                    const modal = document.getElementById('certification-modal');
+                    const modalTitle = document.getElementById('modal-title');
+                    const modalImage = document.getElementById('modal-image');
+
+                    modalTitle.textContent = item.title;
+                    modalImage.src = item.src;
+                    modalImage.alt = item.title;
+                    modal.classList.add('open');
+                });
+                certificationGrid.appendChild(certItem);
+            });
+            section.appendChild(certificationGrid);
+
+            return section;
+        };
+
+        // Data untuk bagian Contact
+        const contactData = [
+            {
+                icon: 'fas fa-envelope',
+                text: 'adityakelvian10@gmail.com',
+                link: 'mailto:adityakelvian10@gmail.com'
+            },
+            {
+                icon: 'fab fa-linkedin',
+                text: 'Aditya Kelvian Yunianto',
+                link: 'https://www.linkedin.com/in/aditya-kelvian-yunianto/'
+            },
+            {
+                icon: 'fab fa-github',
+                text: 'Aditya Kelvian Yunianto',
+                link: 'https://github.com/adityakelvian'
+            },
+            {
+                icon: 'fab fa-instagram',
+                text: 'Aditya Kelvian Yunianto',
+                link: 'https://www.instagram.com/aadityaakelviaan/'
+            },
+            {
+                icon: 'fab fa-facebook',
+                text: 'Aditya Kelvian Yunianto',
+                link: 'https://www.facebook.com/aditya.kelvian.yunianto'
+            }
+        ];
+
+        // Fungsi untuk merender bagian Contact
+        const renderContactSection = () => {
+            const section = createElement('section', ['mb-16']);
+            section.id = 'contact-section'; // Add ID for navigation
+
+            const heading = createElement('h2', ['text-3xl', 'font-bold', 'text-white', 'mb-6', 'border-b-2', 'border-blue-500', 'pb-3', 'inline-block'], 'Contact');
+            section.appendChild(heading);
+
+            // Container for centered elements
+            const centeredContentDiv = createElement('div', ['text-center']);
+
+            const catImage = createElement('img', ['w-32', 'h-32', 'mx-auto', 'mb-6'], ''); // mx-auto for centering
+            catImage.src = 'https://raw.githubusercontent.com/google/material-design-icons/master/png/social/public_24dp.png'; // Placeholder for cat image
+            catImage.alt = 'Kucing Kartun';
+            catImage.onerror = function() {
+                this.src = 'https://placehold.co/128x128/3d4d5e/c9d1d9?text=Kucing';
+                this.alt = 'Gambar kucing tidak tersedia';
+            };
+            centeredContentDiv.appendChild(catImage);
+
+            const connectHeading = createElement('h3', ['text-2xl', 'font-semibold', 'text-blue-400', 'mb-2'], "Let's Connect"); // Centered by parent
+            centeredContentDiv.appendChild(connectHeading);
+
+            const motivationText = createElement('p', ['text-gray-300', 'text-tight-leading', 'text-md', 'mb-8', 'max-w-xl', 'mx-auto'], 'Connection is the Key to Personal and Career Success. Sometimes, Reaching Out and Taking Someone\'s Hand Is the Beginning of A Journey'); // mx-auto for centering
+            centeredContentDiv.appendChild(motivationText);
+
+            const contactGrid = createElement('div', ['grid', 'grid-cols-1', 'md:grid-cols-2', 'gap-4', 'max-w-2xl', 'mx-auto']); // mx-auto for centering
+            
+            contactData.forEach(item => {
+                const button = createElement('a', ['flex', 'items-center', 'justify-center', 'bg-gray-800', 'hover:bg-gray-700', 'py-3', 'px-4', 'rounded-lg', 'transition', 'duration-300', 'space-x-3', 'contact-button'], `<i class="${item.icon} text-xl"></i> <span>${item.text}</span>`);
+                button.href = item.link;
+                button.target = '_blank';
+                contactGrid.appendChild(button);
+            });
+            centeredContentDiv.appendChild(contactGrid);
+
+            section.appendChild(centeredContentDiv); // Append the centered content container
+            return section;
+        };
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            const mainContent = document.getElementById('main-content');
+            const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+            const certificationModal = document.getElementById('certification-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            // Fungsi untuk mengatur tema
+            const setTheme = (theme) => {
+                if (theme === 'light') {
+                    body.classList.add('light-theme');
+                    themeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>'; // Ikon bulan untuk mode terang
+                } else {
+                    body.classList.remove('light-theme');
+                    themeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>'; // Ikon matahari untuk mode gelap
+                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Memuat tema yang disimpan saat halaman dimuat
+            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default ke 'dark' jika tidak ada
+            setTheme(savedTheme);
+
+            // Event listener untuk tombol toggle tema
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('light-theme')) {
+                    setTheme('dark');
+                } else {
+                    setTheme('light');
+                }
+            });
+
+            // Event listener untuk tombol toggle menu seluler
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('open');
+            });
+
+            // Render semua bagian ke main content
+            mainContent.appendChild(renderHeroSection());
+            mainContent.appendChild(renderAboutSection());
+            mainContent.appendChild(renderWorkExperienceSection());
+            mainContent.appendChild(renderTrainingOrganizationSection());
+            mainContent.appendChild(renderEducationSection());
+            mainContent.appendChild(renderSkillsSection()); 
+            mainContent.appendChild(renderPortfolioSection());
+            mainContent.appendChild(renderCertificationSection());
+            mainContent.appendChild(renderGallerySection());
+            mainContent.appendChild(renderContactSection());
+
+            // Re-apply description toggle functionality after content is rendered
+            document.querySelectorAll('.toggle-description').forEach(button => {
+                button.addEventListener('click', () => {
+                    const descriptionContent = button.nextElementSibling;
+                    descriptionContent.classList.toggle('open');
+                    if (descriptionContent.classList.contains('open')) {
+                        button.innerHTML = 'Hide Description <i class="fas fa-chevron-up ml-2 text-sm transition-transform duration-300"></i>';
+                        } else {
+                        button.innerHTML = 'Show Description <i class="fas fa-chevron-down ml-2 text-sm transition-transform duration-300"></i>';
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // Mencegah perilaku default tautan
+                    
+                    // Tutup menu seluler jika terbuka
+                    if (mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                    }
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Gunakan perilaku gulir halus
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Show/Hide scroll-to-top button based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Mengubah ambang batas gulir menjadi 50px
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+
+            // Scroll to top when button is clicked
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Handle skill tab clicks
+            document.querySelectorAll('#skills-section .tab-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('#skills-section .tab-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    displaySkills(button.dataset.category);
+                });
+            });
+            // Initial display of skills
+            displaySkills('Language');
+
+            // Handle portfolio tab clicks
+            document.querySelectorAll('#portfolio-section .tab-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('#portfolio-section .tab-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    displayPortfolio(button.dataset.category);
+                });
+            });
+            // Initial display of portfolio
+            displayPortfolio('Web');
+
+            // Close modal when close button is clicked
+            modalCloseBtn.addEventListener('click', () => {
+                certificationModal.classList.remove('open');
+            });
+
+            // Close modal when clicking outside the content
+            certificationModal.addEventListener('click', (e) => {
+                if (e.target === certificationModal) {
+                    certificationModal.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
